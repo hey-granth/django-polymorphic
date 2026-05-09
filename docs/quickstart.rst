@@ -7,11 +7,17 @@ Install the project using::
 
 Update the settings file:
 
-.. literalinclude:: ../src/polymorphic/tests/settings.py
-   :caption: src/polymorphic/tests/settings.py (INSTALLED_APPS excerpt)
-   :language: python
-   :lines: 100-121
-   :linenos:
+.. code-block:: python
+
+   INSTALLED_APPS = [
+       # Required by django-polymorphic for polymorphic_ctype bookkeeping.
+       "django.contrib.contenttypes",
+
+       # Enable polymorphic model support.
+       "polymorphic",
+   ]
+
+You can append these entries to an existing ``INSTALLED_APPS`` list in your project settings.
 
 .. only:: html
 
